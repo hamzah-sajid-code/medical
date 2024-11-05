@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>I-Chat Message page</title>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<audio src="ting.mp3" id="ting12"></audio>
+	<div class="container">
+		<button onclick="back()">Back</button>
+		<button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout()">Logout</button>
+		<center>
+			<label class="switch">
+				<input type="checkbox" onchange="offandonting()" id="tingsss" name="tingsss">
+				<span class="slider round"></span>
+			</label>
+			<span class="lever"></span>
+			</label>
+			<label style="color: white;">On Or Off Ting Voice</label>
+
+			<h1 class="header">
+				I-Chat
+			</h1>
+			<button
+				style="font-size:15px;cursor:pointer;position: fixed;z-index: 1;top: 0;left: 0;transform: rotate(90deg);margin-top: 275px;margin-left: -80px;"
+				class="btn btn-warning" onclick="openNav()">&#9776; Open Everyone Status</button>
+			<!-- SideBar -->
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div style="text-align: center;font-size: 10px;" id="output2">
+
+				</div>
+			</div>
+			<span>
+				<h3 class="color_white" id="user_names">Chat With Your Friend <span id="roomname"></span></h3>
+				<div style="text-align: left;margin-bottom: 70px;margin-left: 30px;" id="output">
+					<div id="imgOutput"></div>
+				</div>
+			</span>
+
+		</center>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<center>
+		<div class="input_div_message_page">
+			<input type="text" id="msg" class="form-control" placeholder="Message">
+
+			<label>Send:</label>
+			<button class="btn btn-success" onclick="send()">Send</button>
+			<br>
+			<br>
+			<label for="aaa">
+				<h4 class="btn btn-info">Send Audios, Images and Videos</h4>
+			</label>
+			<input type="file" id="aaa" onchange="encodeImageFileAsURL(this)" class="form-control"
+				style="display:none;" />
+			<label for="myFile">
+				<h4 class="btn btn-success">Send Document</h4>
+			</label>
+			<input type="file" onchange="getFile()" class="form-control" id="myFile" style="display: none;" />
+		</div>
+	</center>
+
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
+	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyAO1zTVIEfgDGeKQJ9ZB31xEsS3rXK7BdY",
+			authDomain: "i-chat-4bf8e.firebaseapp.com",
+			projectId: "i-chat-4bf8e",
+			storageBucket: "i-chat-4bf8e.appspot.com",
+			messagingSenderId: "150367278400",
+			appId: "1:150367278400:web:4e686f5b2731bfdb61d6a5",
+			measurementId: "G-B8CX9LBJ7E"
+		};
+		firebase.initializeApp(firebaseConfig);
+	</script>
+	<script src="friend.js"></script>
+</body>
+
+</html>

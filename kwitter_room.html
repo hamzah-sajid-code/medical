@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>I-Chat Room</title>
+	<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout()">Logout</button>
+		<!-- Material checked -->
+		<center>
+			<h1 class="header">
+				I-Chat
+			</h1>
+			<br>
+			<h3 class="color_white" id="user_names">Welcome <span id="name"></span></h3>
+			<div class="form-group input_div_room_page">
+				<label>#Add Room:</label>
+				<input type="text" id="id_room" class="form-control" placeholder="#Room Name">
+				<select id="pp">
+					<option value="public">Public</option>
+					<option value="private">Private</option>
+				</select>
+				<br>
+				<input type="text" id="pusa" placeholder="Password" style="display: none;">
+			</div>
+
+			<button class="btn btn-success" onclick="addRoom()">#Add Room</button>
+			<h3 class="color_white">#Public Rooms</h3>
+
+			<div id="output">
+			</div>
+			<br>
+			<h3 class="color_white">#Private Rooms</h3>
+			<div id="out2"></div>
+			<br>
+			<br>
+			<button
+				style="font-size:15px;cursor:pointer;position: fixed;z-index: 1;top: 0;left: 0;transform: rotate(90deg);margin-top: 275px;margin-left: -80px;"
+				class="btn btn-warning" onclick="openNav()">&#9776; Open Everyone Status</button>
+			<!-- SideBar -->
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div style="text-align: center;font-size: 10px;" id="output2">
+
+				</div>
+			</div>
+
+			<a class="btn btn-success" style="width: 75%;" data-toggle="collapse" href="#collapseExample" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				#Friend Direct Message
+			</a>
+			<br>
+			<div class="collapse" id="collapseExample">
+				<br>
+				<br>
+				<div class="form-group input_div_room_page">
+					<label>#Direct Messages:</label>
+					<input type="text" id="firendName" class="form-control" placeholder="#Friend Name">
+				</div>
+				<button class="btn btn-success" onclick="sendFriendRequest()">#Send A Friend Request</button>
+
+				<h3 class="color_white">#Friends</h3>
+				<div id="firendoutput">
+
+				</div>
+				<br>
+				<br>
+				<h3 class="color_white">#Your Friend Requests</h3>
+				<div id="firendoutputreq">
+
+				</div>
+				<br>
+				<br>
+				<h3 class="color_white">#Your Ongoing Friend Requests</h3>
+				<div id="firendouturputreq">
+
+				</div>
+				<h3 class="color_white">#Your Declined Friend Requests History</h3>
+				<div id="friendreqhis">
+
+				</div>
+			</div>
+
+		</center>
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
+	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyAO1zTVIEfgDGeKQJ9ZB31xEsS3rXK7BdY",
+			authDomain: "i-chat-4bf8e.firebaseapp.com",
+			projectId: "i-chat-4bf8e",
+			storageBucket: "i-chat-4bf8e.appspot.com",
+			messagingSenderId: "150367278400",
+			appId: "1:150367278400:web:4e686f5b2731bfdb61d6a5",
+			measurementId: "G-B8CX9LBJ7E"
+		};
+		firebase.initializeApp(firebaseConfig);
+	</script>
+
+
+
+	<script src="kwitter_room.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	/* background-image: linear-gradient(to right top, #33a0f1, #2591d9, #1882c1, #0a73aa, #006494); */
+	/* background-color: #5CDB95; */
+	background-color: green;
+
+}
+
+.header {
+	color: white;
+	font-family: 'Yeon Sung';
+	font-size: 45px;
+	letter-spacing: 10px;
+	margin-top: 80px;
+}
+
+.header img {
+	width: 80px;
+	margin-left: -15px;
+}
+
+.login_div {
+	background: rgba(255, 255, 255, 0.8);
+	float: none;
+	border-radius: 15px;
+}
+
+.logo {
+	width: 80px;
+	margin-top: 30px;
+	border-radius: 40px;
+}
+
+.onlineButton {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	padding: 20px;
+}
+
+#login_button {
+	width: 80%;
+	border-radius: 15px;
+}
+
+.room_name {
+	cursor: pointer;
+	font-size: 20px;
+}
+
+
+#logout {
+	font-size: 20px;
+	float: right;
+}
+
+
+#output,
+#output2,
+#firendoutput,
+#firendoutputreq,
+#firendouturputreq,
+#friendreqhis {
+	padding: 10px;
+	width: 80%;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 15px;
+}
+
+#out2 {
+	padding: 10px;
+	width: 80%;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 15px;
+}
+
+.input_div_room_page {
+	width: 80%;
+}
+
+.input_div label {
+	color: white;
+	font-size: 20px;
+}
+
+
+.input_div_message_page {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.input_div_message_page label {
+	color: black;
+}
+
+.input_div_message_page #msg {
+	width: 80%;
+}
+
+.input_div_message_page button {
+	margin-top: 15px;
+	width: 50%;
+}
+
+.color_white {
+	color: white
+}
+
+.user_tick {
+	width: 20px;
+}
+
+.message_h4 {
+	padding-left: 5px;
+	color: grey;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked+.slider {
+	background-color: #2196F3;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+/* .sidenav {
+	height: 100%;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: lime;
+	overflow-x: hidden;
+	padding-top: 20px;
+  } */
+  .sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: lime;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+  }
+  
+  .sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+	color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  #main {
+	transition: margin-left .5s;
+	padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
